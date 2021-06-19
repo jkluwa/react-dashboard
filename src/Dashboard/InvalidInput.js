@@ -3,8 +3,14 @@ import React from "react";
 import styled from "styled-components";
 
 const Notification = styled.div`
-    width: 50%;
-    height: 50%;
+    & {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.4);
+  }
   & div {
     position: fixed;
     left: 50%;
@@ -54,7 +60,7 @@ let message = '';
         message = <p>age should be higher than 0</p>;
     }
     return (
-    <Notification>
+    <Notification onClick={props.close}>
       <div>
         <div>
           <h1>Invalid input</h1>

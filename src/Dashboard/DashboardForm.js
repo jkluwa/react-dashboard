@@ -48,8 +48,8 @@ const DashboardForm = (props) => {
     const changeAgeHandler = event => {
         setAge(event.target.value);
     }
-    const closeNotification = () => {
-        setNotificationOn(false);
+    const closeNotification = (data) => {
+        if (data.currentTarget === data.target) setNotificationOn(false);
     }
     const submitted = (event) => {
         event.preventDefault();
